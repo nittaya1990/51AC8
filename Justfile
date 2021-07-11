@@ -3,4 +3,4 @@ default:
 
 alias ex := example
 example:
-    python src/main.py src/test.pL3 --log
+    python src/skRun.py src/test.sk --log

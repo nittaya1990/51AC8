@@ -1,6 +1,6 @@
 import argparse
-from interpreter import Interpreter
-from sparser import Parser
+from skInterpreter import Interpreter
+from skParse import Parser
 
 # Set argparser
 argparser = argparse.ArgumentParser()

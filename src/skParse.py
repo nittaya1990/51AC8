@@ -1,26 +1,4 @@
-from enum import Enum
-
-class TokenTypes(Enum):
-    Number = 0
-    Array = 1
-    String = 2
-
-    Command = 3
-
-class Token:
-    def __init__(self, value, _type, misc=None):
-        self.value = value
-        self.type = _type
-        self.misc = misc
-
-    def update(self, misc):
-        self.misc = misc
-
-    def __str__(self):
-        val_str = self.value
-        if self.type != TokenTypes.Number:
-            val_str = "'" + self.value + "'"
-        return f"Token({val_str}, {self.type}, {self.misc})"
+from skToken import Token, TTypes
 
 class Parser:
     def __init__(self, code):
@@ -29,7 +7,7 @@ class Parser:
         self.parsed = []
         self.once = False
 
-        self.NUMBERS = "0123456789.e"
+        self.NUMBERS = "0123456789."
 
         self.pre_parse()
 
@@ -67,32 +45,32 @@ class Parser:
             after = self.code[self.i:]
 
             if char in self.NUMBERS:
-                digit_end = self.get_chars_bounds(after, self.NUMBERS)
+                digit_end = self.get_chars_bounds(after, self.NUMBERS + "e")
                 try:
                     val = int(self.code[self.i:self.i + digit_end])
                 except:
                     val = float(self.code[self.i:self.i + digit_end])
-                tok = Token(val, TokenTypes.Number)
+                tok = Token(val, TTypes.NUMBER)
                 self.parsed.append(tok)
                 self.i += digit_end - 1
             elif char == 'p' or char == 'ō':
                 string_end = after.index('`')
-                self.parsed.append(Token(char, TokenTypes.Command))
-                self.parsed.append(Token(after[1:string_end], TokenTypes.String))
-                self.parsed.append(Token('`', TokenTypes.Command))
+                self.parsed.append(Token(char, TTypes.COMMAND))
+                self.parsed.append(Token(after[1:string_end], TTypes.STRING))
+                self.parsed.append(Token('`', TTypes.COMMAND))
                 self.i += string_end
             elif char == '\\':
-                self.parsed.append(Token(char, TokenTypes.Command))
-                self.parsed.append(Token(after[1], TokenTypes.String))
+                self.parsed.append(Token(char, TTypes.COMMAND))
+                self.parsed.append(Token(after[1], TTypes.STRING))
                 self.i += 1
             else:
-                tok = Token(char, TokenTypes.Command)
+                tok = Token(char, TTypes.COMMAND)
                 self.parsed.append(tok)
 
             self.i += 1
 
-        if not ('ṭ' in self.code or 'ō' in self.code):
-            tok = Token('ṭ', TokenTypes.Command)
+        if not 'ṭ' in self.code:
+            tok = Token('ṭ', TTypes.COMMAND)
             self.parsed.append(tok)
 
         self.post_parser()
@@ -130,7 +108,7 @@ class Parser:
                 tok.update(misc)
             elif char == ')':
                 for token in self.parsed:
-                    if token.type == TokenTypes.Command and token.value == '(':
+                    if token.type == TTypes.Command and token.value == '(':
                         if token.misc['end'] == i:
                             misc = {
                                 "start": token.misc["start"]
@@ -145,7 +123,7 @@ class Parser:
                 tok.update(misc)
             elif char == ']':
                 for token in self.parsed:
-                    if token.type == TokenTypes.Command and token.value == '⁅':
+                    if token.type == TTypes.Command and token.value == '⁅':
                         if token.misc['end'] == i:
                             misc = {
                                 "start": token.misc["start"]

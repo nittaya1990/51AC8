@@ -1,5 +1,5 @@
-from sparser import TokenTypes
-from stypes import Types, Object
+from skParse import TTypes
+from skObject import Types, Object
 
 import numpy as np
 from random import choice, randint
@@ -80,7 +80,7 @@ class Interpreter:
             print(after[1].value)
             self.pointer += 2
         # Constants
-        elif op.type == TokenTypes.Number:
+        elif op.type == TTypes.NUMBER:
             obj = Object(op.value, Types.Number)
             self.memory_stack.append(obj)
         elif op.value == 'p':
@@ -100,7 +100,7 @@ class Interpreter:
         # Arithmetic Operators
         elif op.value == '+':
             if self.memory_stack[-1].type == Types.Number or self.memory_stack[-1].type == Types.Array:
-                if after[1].type == TokenTypes.Number:
+                if after[1].type == TTypes.NUMBER:
                     self.memory_stack[-1].value += after[1].value
                     self.pointer += 1
                 elif self.memory_stack[-2].type == Types.Number:
@@ -111,7 +111,7 @@ class Interpreter:
                 self.memory_stack[-1].value += str(obj2.value)
         elif op.value == '-':
             if self.memory_stack[-1].type == Types.Number or self.memory_stack[-1].type == Types.Array:
-                if after[1].type == TokenTypes.Number:
+                if after[1].type == TTypes.NUMBER:
                     self.memory_stack[-1].value -= after[1].value
                     self.pointer += 1
                 elif self.memory_stack[-2].type == Types.Number:
@@ -119,7 +119,7 @@ class Interpreter:
                     self.memory_stack[-1].value -= obj2.value
         elif op.value == '×':
             if self.memory_stack[-1].type == Types.Number or self.memory_stack[-1].type == Types.Array:
-                if after[1].type == TokenTypes.Number:
+                if after[1].type == TTypes.NUMBER:
                     self.memory_stack[-1].value *= after[1].value
                     self.pointer += 1
                 elif self.memory_stack[-2].type == Types.Number:
@@ -130,7 +130,7 @@ class Interpreter:
                 self.memory_stack[-1].value *= obj2.value
         elif op.value == '÷':
             if self.memory_stack[-1].type == Types.Number or self.memory_stack[-1].type == Types.Array:
-                if after[1].type == TokenTypes.Number:
+                if after[1].type == TTypes.NUMBER:
                     self.memory_stack[-1].value /= after[1].value
                     self.pointer += 1
                 elif self.memory_stack[-2].type == Types.Number:
@@ -138,7 +138,7 @@ class Interpreter:
                     self.memory_stack[-1].value /= obj2.value
         elif op.value == '%':
             if self.memory_stack[-1].type == Types.Number or self.memory_stack[-1].type == Types.Array:
-                if after[1].type == TokenTypes.Number:
+                if after[1].type == TTypes.NUMBER:
                     self.memory_stack[-1].value = after.memory_stack[-1].value % after[1].value
                     self.pointer += 1
                 elif self.memory_stack[-2].type == Types.Number:
@@ -146,7 +146,7 @@ class Interpreter:
                     self.memory_stack[-1].value = self.memory_stack[-1].value % obj2.value
         elif op.value == '*':
             if self.memory_stack[-1].type == Types.Number or self.memory_stack[-1].type == Types.Array:
-                if after[1].type == TokenTypes.Number:
+                if after[1].type == TTypes.NUMBER:
                     self.memory_stack[-1].value = after.memory_stack[-1].value ** after[1].value
                     self.pointer += 1
                 elif self.memory_stack[-2].type == Types.Number:
@@ -155,7 +155,7 @@ class Interpreter:
         # Bitwise operators
         elif op.value == '»':
             if self.memory_stack[-1].type == Types.Number:
-                if after[1].type == TokenTypes.Number:
+                if after[1].type == TTypes.NUMBER:
                     self.memory_stack[-1].value = self.memory_stack[-1].value >> after[1].value
                     self.pointer += 1
                 elif self.memory_stack[-2].type == Types.Number:
@@ -163,7 +163,7 @@ class Interpreter:
                     self.memory_stack[-1].value = self.memory_stack[-1].value >> obj2.value
         elif op.value == '«':
             if self.memory_stack[-1].type == Types.Number:
-                if after[1].type == TokenTypes.Number:
+                if after[1].type == TTypes.NUMBER:
                     self.memory_stack[-1].value = self.memory_stack[-1].value << after[1].value
                     self.pointer += 1
                 elif self.memory_stack[-2].type == Types.Number:
@@ -401,7 +401,7 @@ class Interpreter:
         # Comparision operators
         elif op.value == '=':
             if self.memory_stack[-1].type == Types.Number:
-                if after[1].type == TokenTypes.Number:
+                if after[1].type == TTypes.NUMBER:
                     self.memory_stack[-1].value = 1 if self.memory_stack[-1].value == after[1].value else 0
                     self.pointer += 1
                 elif self.memory_stack[-2].type == Types.Number:
@@ -417,7 +417,7 @@ class Interpreter:
                     self.memory_stack[-1] = Object(1 if self.memory_stack[-1].value == obj2.value else 0, Types.Number)
         elif op.value == '≠':
             if self.memory_stack[-1].type == Types.Number:
-                if after[1].type == TokenTypes.Number:
+                if after[1].type == TTypes.NUMBER:
                     self.memory_stack[-1].value = 1 if self.memory_stack[-1].value != after[1].value else 0
                     self.pointer += 1
                 elif self.memory_stack[-2].type == Types.Number:
@@ -433,7 +433,7 @@ class Interpreter:
                     self.memory_stack[-1] = Object(1 if self.memory_stack[-1].value != obj2.value else 0, Types.Number)
         elif op.value == '>':
             if self.memory_stack[-1].type == Types.Number:
-                if after[1].type == TokenTypes.Number:
+                if after[1].type == TTypes.NUMBER:
                     self.memory_stack[-1].value = 1 if self.memory_stack[-1].value > after[1].value else 0
                     self.pointer += 1
                 elif self.memory_stack[-2].type == Types.Number:
@@ -441,7 +441,7 @@ class Interpreter:
                     self.memory_stack[-1].value = 1 if self.memory_stack[-1].value > obj2.value else 0
         elif op.value == '<':
             if self.memory_stack[-1].type == Types.Number:
-                if after[1].type == TokenTypes.Number:
+                if after[1].type == TTypes.NUMBER:
                     self.memory_stack[-1].value = 1 if self.memory_stack[-1].value < after[1].value else 0
                     self.pointer += 1
                 elif self.memory_stack[-2].type == Types.Number:
@@ -449,7 +449,7 @@ class Interpreter:
                     self.memory_stack[-1].value = 1 if self.memory_stack[-1].value < obj2.value else 0
         elif op.value == '≤':
             if self.memory_stack[-1].type == Types.Number:
-                if after[1].type == TokenTypes.Number:
+                if after[1].type == TTypes.NUMBER:
                     self.memory_stack[-1].value = 1 if self.memory_stack[-1].value <= after[1].value else 0
                     self.pointer += 1
                 elif self.memory_stack[-2].type == Types.Number:
@@ -457,7 +457,7 @@ class Interpreter:
                     self.memory_stack[-1].value = 1 if self.memory_stack[-1].value <= obj2.value else 0
         elif op.value == '≥':
             if self.memory_stack[-1].type == Types.Number:
-                if after[1].type == TokenTypes.Number:
+                if after[1].type == TTypes.NUMBER:
                     self.memory_stack[-1].value = 1 if self.memory_stack[-1].value >= after[1].value else 0
                     self.pointer += 1
                 elif self.memory_stack[-2].type == Types.Number:
