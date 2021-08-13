@@ -14,4 +14,11 @@ def tokenise(string):
      tokenised code
     """
     string = re.sub(r'#.*', '', string)
-    print(string)
+    string = (
+            string.replace('(', ' ( ')
+            .replace(')', ' ) ')
+            .replace('[', ' [ ')
+            .replace(']', ' ] ')
+            .replace('{', ' { ')
+            .replace('}', ' } ')
+            )
