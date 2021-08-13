@@ -22,3 +22,4 @@ def tokenise(string):
             .replace('{', ' { ')
             .replace('}', ' } ')
             )
+    string = re.sub(r'(K.)',  r' \1 ', string)
