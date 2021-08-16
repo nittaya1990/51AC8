@@ -23,7 +23,7 @@ def split(string):
             .replace('}', ' } ')
             )
     for char in "+=÷×":
-        string = re.sub(r'(K|\\){0}' + '\\' + char, ' ' + char + ' ', string)
+        string = re.sub(r'[^K|\\]' + '\\' + char, ' ' + char + ' ', string)
     string = re.sub(r'(K.)',  r' \1 ', string)
     
     splitted = []
@@ -41,6 +41,8 @@ def split(string):
             continue
 
         temp += char
+
+    if temp != '': splitted.append(temp)
 
     return splitted
 
