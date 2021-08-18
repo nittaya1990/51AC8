@@ -8,7 +8,6 @@ COMMANDS = '+-×÷'
 
 class TType(Enum):
     NUMBER = auto()
-    COMMAND = auto()
     LITERAL = auto()
 
 class Token:
@@ -83,9 +82,7 @@ def tokenise(splitted):
         except:
             try: token = Token(float(v), TType.NUMBER)
             except:
-                token = Token(v, TType.COMMAND)
-        if splitted[i] == '\\':
-            token = Token(v, TType.LITERAL)
+                token = Token(v, TType.LITERAL)
         tokens.append(token)
         i += 1
 
