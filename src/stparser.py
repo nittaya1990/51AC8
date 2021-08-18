@@ -88,5 +88,16 @@ def tokenise(splitted):
 
     return tokens
 
+def join(tokens):
+    """
+    Add information to tokens. For example
+     if the token is a bracket, find its matching bracket and
+     store its index.
+    
+    tokens: list(Token)
+
+    returns: list(Token)
+    """
+
 if __name__ == "__main__":
     print(tokenise(split('2 3.45 0.01 3e100 1 1+-')))
