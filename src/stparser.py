@@ -98,6 +98,10 @@ def join(tokens):
 
     returns: list(Token)
     """
+    i = 0
+    while i < len(tokens):
+        token = tokens[i]
+        i += 1
 
 if __name__ == "__main__":
     print(tokenise(split('2 3.45 0.01 3e100 1 1+-')))
