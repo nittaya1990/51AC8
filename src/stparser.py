@@ -88,7 +88,65 @@ def tokenise(splitted):
 
     return tokens
 
-def join(tokens):
+def get_closing_token(tokens, open, close):
+    """
+    Get the index of the closing token corresponding
+     to the opening token. For example. `( () )` will return
+     the last element's index
+
+    tokens: list(Token)
+     Tokens to parse through.
+
+    open: str
+     Opening string
+
+    close: str
+     Corresponding closing string
+    """
+    is_bound = 0   # Lookout for nested open/close pairs
+    found_start = False
+    index = -1    # -1 means the last element (for fallback)
+
+    i = 0
+    while i < len(tokens):
+        token = tokens[i]
+        char = token.value
+
+        if char == open:
+            if not found_start: found_start = True
+            is_bound += 1
+
+        elif char == close:
+            is_bound -= 1
+            if is_bound == 0:
+                index = i
+                break
+        i += 1
+
+    return index
+
+def get_nested_level(tokens, open, close):
+    """
+    Get the level of nested. 0 if not nested
+
+    tokens: list(Token)
+     Tokens to parse through.
+
+    open: str
+     Opening string
+
+    close: str
+     Corresponding closing string
+    """
+    k = 0
+    for token in tokens:
+        if token.value == open:
+            k += 1
+        if token.value == close:
+            k -= 1
+    return k + 1
+
+def parse(tokens):
     """
     Add information to tokens. For example
      if the token is a bracket, find its matching bracket and
@@ -104,4 +162,4 @@ def join(tokens):
         i += 1
 
 if __name__ == "__main__":
-    print(tokenise(split('2 3.45 0.01 3e100 1 1+-')))
+    print(tokenise(split('2 3.45 3e100 1 1+-')))
