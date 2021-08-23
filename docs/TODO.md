@@ -7,3 +7,4 @@ Holds what I have remaining.
     - [ ] Match braces `(){}`
     - [ ] If statement `{:}`
     - [ ] `λ` contains code (Its a function)
+- [ ] Commands for the parser
