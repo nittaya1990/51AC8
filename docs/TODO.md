@@ -22,4 +22,5 @@ Holds what I have remaining.
     - [ ] `¯` Negate, if stack is zero push -1
     - [ ] `/₹F` Reduce Map Filter over custom function.
     - [ ] `LrRCBbA` len range Range Complement Binary truthy-falsly Append
-    - [ ] `d_≡\`"WU↓↑⇅` Duplicate top 2, Push len, Dup, Swap top 2, Pair top 2, Wrap, Unwrap, Push, pop, reverse
+    - [ ] `d_≡<backtick>"WU↓↑⇅` Duplicate top 2, Push len, Dup, Swap top 2, Pair top 2, Wrap, Unwrap, Push, pop, reverse
+    - [ ] `\` Put next char's value.
