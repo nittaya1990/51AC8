@@ -24,3 +24,8 @@ Holds what I have remaining.
     - [ ] `LrRCBbA` len range Range Complement Binary truthy-falsly Append
     - [ ] `d_≡<backtick>"WU↓↑⇅` Duplicate top 2, Push len, Dup, Swap top 2, Pair top 2, Wrap, Unwrap, Push, pop, reverse
     - [ ] `\` Put next char's value.
+    - [ ] `KM` Constants and Math
+    - [ ] `ŚŦI·` Sort Transpose Identity matrix Matmul
+    - [ ] `iS` Index Splice
+    - [ ] `Ț` push 10
+- [ ] `-j` Flag, print the top array seprated by newlines like vyxal.
