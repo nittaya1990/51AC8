@@ -15,3 +15,5 @@ Holds what I have remaining.
     - [ ] `{..:..}` If .. else
     - [ ] `+-×÷` Addition Subtraction Multiplication Division
     - [ ] `&|~^«»` Bitwise: And Or Not Xor ShiftLeft ShiftRight
+    - [ ] `=≠<>≤≥` Comparison 
+    - [ ] `%²³½¼¾√∛*` Mod Square Cube .... Power
