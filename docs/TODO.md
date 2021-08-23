@@ -14,3 +14,4 @@ Holds what I have remaining.
     - [ ] `(..)` While loop
     - [ ] `{..:..}` If .. else
     - [ ] `+-×÷` Addition Subtraction Multiplication Division
+    - [ ] `&|~^«»` Bitwise: And Or Not Xor ShiftLeft ShiftRight
