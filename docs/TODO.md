@@ -17,3 +17,4 @@ Holds what I have remaining.
     - [ ] `&|~^«»` Bitwise: And Or Not Xor ShiftLeft ShiftRight
     - [ ] `=≠<>≤≥` Comparison 
     - [ ] `%²³½¼¾√∛*` Mod Square Cube .... Power
+    - [ ] `Tt` Pop and: Print top as character(s), print top
