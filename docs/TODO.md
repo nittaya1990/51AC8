@@ -18,3 +18,8 @@ Holds what I have remaining.
     - [ ] `=≠<>≤≥` Comparison 
     - [ ] `%²³½¼¾√∛*` Mod Square Cube .... Power
     - [ ] `Tt` Pop and: Print top as character(s), print top
+    - [ ] `©®` Registors, (default: 10)
+    - [ ] `¯` Negate, if stack is zero push -1
+    - [ ] `/₹F` Reduce Map Filter over custom function.
+    - [ ] `LrRCBbA` len range Range Complement Binary truthy-falsly Append
+    - [ ] `d_≡\`"WU↓↑⇅` Duplicate top 2, Push len, Dup, Swap top 2, Pair top 2, Wrap, Unwrap, Push, pop, reverse
