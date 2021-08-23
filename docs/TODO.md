@@ -12,7 +12,7 @@ Holds what I have remaining.
     - [ ] `@` Function call
     - [ ] `[..]` For each
     - [ ] `(..)` While loop
-    - [ ] `{..:..}` If .. else
+    - [ ] `{..:..}⁇` If .. else If skip next char
     - [ ] `+-×÷` Addition Subtraction Multiplication Division
     - [ ] `&|~^«»` Bitwise: And Or Not Xor ShiftLeft ShiftRight
     - [ ] `=≠<>≤≥` Comparison 
