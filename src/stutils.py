@@ -25,6 +25,22 @@ def depth(l):
 
 def reduce_first(f, l):
     """
+    Reduce, on the first axis, function f over l
+    
+    f: dyadic function
+    
+    l: list(any)
+    """
+    if not isinstance(l, list):
+        return l
+    res = l[0]
+    for x in l[1:]:
+        res = f(res, x)
+    return res
+
+
+def reduce(f, l):
+    """
     Reduce function f over l
     
     f: dyadic function
@@ -33,6 +49,8 @@ def reduce_first(f, l):
     """
     if not isinstance(l, list):
         return l
+    if isinstance(l[0], list):
+        return [reduce(f, x) for x in l]
     res = l[0]
     for x in l[1:]:
         res = f(res, x)
