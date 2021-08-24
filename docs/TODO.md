@@ -26,7 +26,7 @@ Holds what I have remaining.
     - [ ] `d_≡<backtick>"WU↓↑⇅` Duplicate top 2, Push len, Dup, Swap top 2, Pair top 2, Wrap, Unwrap, Push, pop, reverse
     - [ ] `\` Put next char's value.
     - [ ] `KM` Constants and Math
-    - [ ] `Ś⍉I·` Sort Transpose Identity matrix Matmul
+    - [ ] `ŚF⍉I·` Sort Flatten Transpose Identity matrix Matmul
     - [ ] `i` Index / Slice
     - [ ] `Ț` push 10
     - [ ] `s` Split into chunks
