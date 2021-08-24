@@ -30,7 +30,7 @@ Holds what I have remaining.
     - [ ] `i` Index / Slice
     - [ ] `Ț` push 10
     - [ ] `s` Split into chunks
-    - [ ] `#` Reshape (APL/k)
+    - [ ] `#≢` Reshape (APL/k) Depth
     - [ ] `æ` Is prime?
     - [ ] `→←` Push to / pop from variable
 - [ ] Interpreter Flags
