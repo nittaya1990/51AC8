@@ -17,7 +17,7 @@ def split(string):
     returns: list(str)
      splitted code
     """
-    string = re.sub(r'#.*', '', string)
+    string = re.sub(r'⍝.*', '', string)
     string = (
             string.replace('(', ' ( ')
             .replace(')', ' ) ')
