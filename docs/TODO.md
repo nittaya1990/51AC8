@@ -31,7 +31,7 @@ Holds what I have remaining.
     - [ ] `Ț` push 10
     - [ ] `s` Split into chunks
     - [ ] `#≢` Reshape (APL/k) Depth
-    - [ ] `æ` Is prime?
+    - [ ] `æ∊` Is prime? Belongs to?
     - [ ] `→←` Push to / pop from variable
 - [ ] Interpreter Flags
     - [ ] `-j` Flag, print the top array seprated by newlines like vyxal.
