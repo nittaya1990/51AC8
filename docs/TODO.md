@@ -4,6 +4,7 @@ Holds what I have remaining.
 ### TODO:
 - [x] Make a TODO.
 - [ ] Make a Parser. (The lexer is included)
+    - [ ] convert to AST
     - [ ] Match braces `(..){..}`
     - [ ] If statement `{..:..}`
     - [ ] `λ..;` contains code (Its a function)
@@ -26,8 +27,14 @@ Holds what I have remaining.
     - [ ] `\` Put next char's value.
     - [ ] `KM` Constants and Math
     - [ ] `Ś⍉I·` Sort Transpose Identity matrix Matmul
-    - [ ] `iS` Index Splice
+    - [ ] `i` Index / Slice
     - [ ] `Ț` push 10
     - [ ] `s` Split into chunks
     - [ ] `#` Reshape (APL/k)
-- [ ] `-j` Flag, print the top array seprated by newlines like vyxal.
+- [ ] Interpreter Flags
+    - [ ] `-j` Flag, print the top array seprated by newlines like vyxal.
+    - [ ] `-s` Print the stack at the end of the program
+    - [ ] `--log` Log file
+    - [ ] `-S` Supress output
+    - [ ] `-a` Output into an array, that is printed later.
+    - [ ] `-N` Reverse the stack after each command
