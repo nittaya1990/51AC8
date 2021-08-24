@@ -40,10 +40,25 @@ def reduce_first(f, l):
         res = f(res, x)
     return res
 
+def vectorise1(f, x):
+    """
+    Monadic vectorisation function.
+     Derived from vectorise2 (see below).
+    
+    f: monadic function
+    
+    x: list(any) | any
+    """
+    dx = depth(x)
+    if dx != 0:
+        return [vectorise1(f, a) for a in x]
+    else:
+        return f(x)
+
 def vectorise2(f, x, y):
     """
     Jelly's generic vectorisation function.
-    Ported from Jelly to Python
+     Ported from Jelly to Python
     
     Credit: caird coinheringaahing's jelly 
      answer https://codegolf.stackexchange.com/a/220832/103854
