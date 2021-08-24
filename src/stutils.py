@@ -26,7 +26,7 @@ def reduce(f, l):
     """
     Reduce function f over l
     
-    f: function
+    f: dyadic function
     
     l: list(any)
     """
