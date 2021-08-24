@@ -21,3 +21,18 @@ def depth(l):
 
     d = max(list(map(depth, l))) + 1
     return d
+
+def reduce(f, l):
+    """
+    Reduce function f over l
+    
+    f: function
+    
+    l: list(any)
+    """
+    if not isinstance(l, list):
+        return l
+    res = l[0]
+    for x in l[1:]:
+        res = f(res, x)
+    return res
