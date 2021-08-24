@@ -1,7 +1,8 @@
 """
 Matrix utilily functions.
 As an extension to the python list
-This module is standalone and does not depend on anything else.
+This module is standalone and does not depend on anything except the
+ones found in the python standard library.
 """
 from collections import deque
 
