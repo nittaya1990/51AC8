@@ -32,6 +32,9 @@ Holds what I have remaining.
     - [ ] `s` Split into chunks
     - [ ] `#` Reshape (APL/k)
     - [ ] `æ` Is prime?
+    - [ ] `→←` Push to / pop from variable
+    - [ ] `$£` Define / push struct
+    - [ ] `,;` Struct member names Struct end
 - [ ] Interpreter Flags
     - [ ] `-j` Flag, print the top array seprated by newlines like vyxal.
     - [ ] `-s` Print the stack at the end of the program
