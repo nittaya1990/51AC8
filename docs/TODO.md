@@ -14,18 +14,20 @@ Holds what I have remaining.
     - [ ] `(..)` While loop
     - [ ] `{..:..}⁇` If .. else If skip next char
     - [ ] `+-×÷` Addition Subtraction Multiplication Division
-    - [ ] `&|~^«»` Bitwise: And Or Not Xor ShiftLeft ShiftRight
+    - [ ] `&|~^⌽⊖` Bitwise: And Or Not Xor ShiftLeft(apl's with matrix) ShiftRight(apl with matrix)
     - [ ] `=≠<>≤≥` Comparison 
     - [ ] `%²³½¼¾√∛*` Mod Square Cube .... Power
     - [ ] `Tt` Pop and: Print top as character(s), print top
     - [ ] `©®` Registors, (default: 10)
-    - [ ] `¯` Negate, if stack is zero push -1
+    - [ ] `¯` Negate, if stack's len is zero push -1
     - [ ] `/₹F` Reduce Map Filter over custom function.
     - [ ] `LrRCBbA` len range Range Complement Binary truthy-falsly Append
     - [ ] `d_≡<backtick>"WU↓↑⇅` Duplicate top 2, Push len, Dup, Swap top 2, Pair top 2, Wrap, Unwrap, Push, pop, reverse
     - [ ] `\` Put next char's value.
     - [ ] `KM` Constants and Math
-    - [ ] `ŚŦI·` Sort Transpose Identity matrix Matmul
+    - [ ] `Ś⍉I·` Sort Transpose Identity matrix Matmul
     - [ ] `iS` Index Splice
     - [ ] `Ț` push 10
+    - [ ] `s` Split into chunks
+    - [ ] `#` Reshape (APL/k)
 - [ ] `-j` Flag, print the top array seprated by newlines like vyxal.
