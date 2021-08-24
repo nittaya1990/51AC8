@@ -3,6 +3,7 @@ Matrix utilily functions.
 As an extension to the python list
 This module is standalone and does not depend on anything else.
 """
+from collections import deque
 
 def depth(l):
     """
@@ -36,3 +37,32 @@ def reduce(f, l):
     for x in l[1:]:
         res = f(res, x)
     return res
+
+def next(dq):
+    """
+    Rotates the dq left
+    
+    Credit: hyper-neutrino
+    
+    dq: deque
+    """
+	x = dq.popleft()
+	dq.append(x)
+	return x
+
+def reshape(shape, l):
+    """
+    APL's reshape
+    
+    Credit: hyper-neutrino
+    
+    shape: list(int)
+     the shape we want to reshape to
+    
+    l: list
+    """
+	if not isinstance(l, deque): l = deque(l)
+	if len(shape) == 1:
+		return [next(l) for x in range(shape[0])]
+	else:
+		return [reshape(shape[1:], l) for x in range(shape[0])]
