@@ -5,7 +5,6 @@ This module is standalone and does not depend on anything except the
 ones found in the python standard library.
 """
 from collections import deque
-from itertools import zip_longest
 
 def depth(l):
     """
@@ -73,7 +72,7 @@ def vectorise2(f, x, y):
     dy = depth(y)
     if dx == dy:
         if dx != 0:
-            return [vectorise2(f, a, b) for a,b in zip_longest(x, y, fillvalue=0)]
+            return [vectorise2(f, a, b) for a,b in zip(x, y)] + x[:len(y)] + y[:len(x)] # Thanks again caird :)
         else:
             return f(x, y)
     else:
