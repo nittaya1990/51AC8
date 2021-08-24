@@ -23,7 +23,7 @@ def depth(l):
     d = max(list(map(depth, l))) + 1
     return d
 
-def reduce(f, l):
+def reduce_first(f, l):
     """
     Reduce function f over l
     
