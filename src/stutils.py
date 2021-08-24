@@ -38,7 +38,7 @@ def reduce(f, l):
         res = f(res, x)
     return res
 
-def next(dq):
+def _next(dq):
     """
     Rotates the dq left
     
@@ -63,6 +63,6 @@ def reshape(shape, l):
     """
     if not isinstance(l, deque): l = deque(l)
     if len(shape) == 1:
-         return [next(l) for x in range(shape[0])]
+         return [_next(l) for x in range(shape[0])]
     else:
         return [reshape(shape[1:], l) for x in range(shape[0])]
