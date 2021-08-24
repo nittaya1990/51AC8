@@ -46,9 +46,9 @@ def next(dq):
     
     dq: deque
     """
-	x = dq.popleft()
-	dq.append(x)
-	return x
+    x = dq.popleft()
+    dq.append(x)
+    return x
 
 def reshape(shape, l):
     """
@@ -61,8 +61,8 @@ def reshape(shape, l):
     
     l: list
     """
-	if not isinstance(l, deque): l = deque(l)
-	if len(shape) == 1:
-		return [next(l) for x in range(shape[0])]
-	else:
-		return [reshape(shape[1:], l) for x in range(shape[0])]
+    if not isinstance(l, deque): l = deque(l)
+    if len(shape) == 1:
+         return [next(l) for x in range(shape[0])]
+    else:
+        return [reshape(shape[1:], l) for x in range(shape[0])]
