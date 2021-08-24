@@ -31,6 +31,7 @@ Holds what I have remaining.
     - [ ] `Ț` push 10
     - [ ] `s` Split into chunks
     - [ ] `#` Reshape (APL/k)
+    - [ ] `æ` Is prime?
 - [ ] Interpreter Flags
     - [ ] `-j` Flag, print the top array seprated by newlines like vyxal.
     - [ ] `-s` Print the stack at the end of the program
