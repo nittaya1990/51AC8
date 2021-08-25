@@ -21,25 +21,6 @@ class Token:
     def __repr__(self):
         return f"Token({repr(self.value)}, {self.type}, {self.things})"
 
-class ASTType(Enum):
-    NUMBER = auto()
-    KEYWORD = auto()
-
-class ASTNode:
-    """
-    An ASTNode
-
-    value: Token
-
-    type: ASTType
-
-    children: list(ASTNode)
-    """
-    def __init__(self, value, _type):
-        self.value = value
-        self.type = _type
-        self.children = []
-
 def get_closing_token(tokens, open, close):
     """
     Get the index of the closing token corresponding

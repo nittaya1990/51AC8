@@ -1,11 +1,8 @@
 """
 The parser module for 51AC8
 """
-from enum import Enum, auto
 from stast import *
 import re
-
-COMMANDS = '+-×÷'
 
 def split(string):
     """
@@ -26,9 +23,30 @@ def split(string):
             .replace('{', ' { ')
             .replace('}', ' } ')
             )
-    for char in COMMANDS:
-        string = re.sub(r'[^K|\\]' + '\\' + char, ' ' + char + ' ', string)
     string = re.sub(r'(K.)',  r' \1 ', string)
+
+    n_string = ''
+
+    i = 0
+    while i < len(string):
+        char = string[i]
+        try:
+            next = string[i + 1]
+        except:
+            next = ''
+        i += 1
+
+        if char in 'λ@\\':
+            n_string += char + next + ' '
+            i += 1
+            continue
+        if char in '0123456789.e':
+            n_string += string[i:dend(string, i)]
+
+        n_string += char + ' '
+
+    string = n_string
+
     
     splitted = []
     temp = ''
@@ -89,4 +107,4 @@ def parse(tokens):
         i += 1
 
 if __name__ == "__main__":
-    print(tokenise(split('2 3.45 3e100 1 1+-')))
+    print(tokenise(split('λf')))
