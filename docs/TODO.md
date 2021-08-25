@@ -3,6 +3,7 @@ Holds what I have remaining.
 
 ### TODO:
 - [x] Make a TODO.
+- [ ] Write tests using pytest for everything
 - [ ] Make a Parser. (The lexer is included)
     - [ ] convert to AST
     - [ ] Match braces `(..){..}`
