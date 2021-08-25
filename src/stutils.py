@@ -24,9 +24,9 @@ def depth(l):
     d = max(list(map(depth, l))) + 1
     return d
 
-def rotate_first(l):
+def reverse_first(l):
     """
-    APL's rotate first ⊖
+    APL's monadic ⊖
     
     l: list(any) | any
     """
@@ -35,9 +35,9 @@ def rotate_first(l):
     l = l[::-1]
     return l
 
-def rotate(l):
+def reverse(l):
     """
-    APL's rotate ⌽
+    APL's monadic ⌽
     
     l: li
     """
