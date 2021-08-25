@@ -24,6 +24,27 @@ def depth(l):
     d = max(list(map(depth, l))) + 1
     return d
 
+def rotate_first(l):
+    """
+    APL's rotate first ⊖
+    
+    l: list(any) | any
+    """
+    if not isinstance(l, list):
+        return l << 1
+    l = l[::-1]
+    return l
+
+def rotate(l):
+    """
+    APL's rotate ⌽
+    
+    l: li
+    if not isinstance(l, list):
+        return l >> 1
+    l = [x[::-1] for x in l]
+    return l
+
 def reduce_first(f, l):
     """
     Reduce, on the first axis, function f over l
