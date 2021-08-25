@@ -24,9 +24,31 @@ def depth(l):
     d = max(list(map(depth, l))) + 1
     return d
 
+def rotate_first(l):
+    """
+    Rotate the matrix on first axis
+    
+    l: list(any) | any
+    """
+    if not isinstance(l, list):
+        return l
+    l.insert(0, l.pop())
+    return l
+
+def rotate(l):
+    """
+    Rotate the matrix on last axis
+    
+    l: list(any) | any
+    """
+    if not isinstance(l, list):
+        return l
+    l = [rotate_first(x) for x in l]
+    return l
+
 def reverse_first(l):
     """
-    APL's monadic ⊖
+    APL's monadic ⊖ OR bitshift left
     
     l: list(any) | any
     """
@@ -37,9 +59,9 @@ def reverse_first(l):
 
 def reverse(l):
     """
-    APL's monadic ⌽
+    APL's monadic ⌽ OR bitshift right
     
-    l: li
+    l: list(any) | any
     """
     if not isinstance(l, list):
         return l >> 1
