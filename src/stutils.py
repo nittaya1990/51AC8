@@ -229,6 +229,22 @@ def _next(dq):
     dq.append(x)
     return x
 
+def matmul(A, B):
+    """
+    Matrix multiplication.
+    
+    credit: GeeksForGeeks
+    
+    A: list(any)
+    
+    B: list(any)
+    
+    returns: list(any)
+    """
+    return [[sum(a * b for a, b in zip(A_row, B_col))
+                        for B_col in zip(*B)]
+                        for A_row in A]
+
 def reshape(shape, l):
     """
     APL's reshape
