@@ -40,6 +40,7 @@ def rotate(l):
     APL's rotate ⌽
     
     l: li
+    """
     if not isinstance(l, list):
         return l >> 1
     l = [x[::-1] for x in l]
