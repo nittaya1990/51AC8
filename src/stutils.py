@@ -27,6 +27,29 @@ def depth(l):
     d = max(list(map(depth, l))) + 1
     return d
 
+def split(l, csize):
+    """
+    Split l into chunks of csize
+    
+    l: list(any) | any
+    
+    csize: int
+    
+    returns: list(any) | any
+    """
+    if not isinstance(l, list):
+        return l
+    res = []
+    tmp = []
+    for i in range(len(l)):
+        if not (i % csize) and tmp:
+            res.append(tmp)
+            tmp = []
+        tmp.append(l[i])
+    if tmp:
+        res.append(tmp)
+    return res
+
 def rotate_first(l):
     """
     Rotate the matrix on first axis
