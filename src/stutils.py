@@ -15,6 +15,8 @@ def depth(l):
     [[4, []], 3] -> 3
     
     l: list(any) | any
+    
+    returns: int
     """
     if not isinstance(l, list):
         return 0
@@ -30,6 +32,8 @@ def rotate_first(l):
     Rotate the matrix on first axis
     
     l: list(any) | any
+    
+    returns: list(any) | any
     """
     if not isinstance(l, list):
         return l
@@ -39,6 +43,8 @@ def rotate_first(l):
 def rotate(l):
     """
     Rotate the matrix on last axis
+    
+    l: list(any) | any
     
     l: list(any) | any
     """
@@ -52,6 +58,8 @@ def reverse_first(l):
     APL's monadic ⊖ OR bitshift left
     
     l: list(any) | any
+    
+    returns: list(any) | any
     """
     if not isinstance(l, list):
         return l << 1
@@ -63,6 +71,8 @@ def reverse(l):
     APL's monadic ⌽ OR bitshift right
     
     l: list(any) | any
+    
+    returns: list(any) | any
     """
     if not isinstance(l, list):
         return l >> 1
@@ -76,6 +86,8 @@ def reduce_first(f, l):
     f: dyadic function
     
     l: list(any) | any
+    
+    returns: list(any) | any
     """
     if not isinstance(l, list):
         return l
@@ -92,6 +104,8 @@ def vectorise1(f, x):
     f: monadic function
     
     x: list(any) | any
+    
+    returns: list(any) | any
     """
     dx = depth(x)
     if dx != 0:
@@ -112,6 +126,8 @@ def vectorise2(f, x, y):
     x: list(any) | any
     
     y: list(any) | any
+    
+    returns: list(any) | any
     """
     dx = depth(x)
     dy = depth(y)
@@ -133,6 +149,8 @@ def reduce(f, l):
     f: dyadic function
     
     l: list(any) | any
+    
+    returns: float | complex | int
     """
     if not isinstance(l, list):
         return l
@@ -150,6 +168,8 @@ def _next(dq):
     Credit: hyper-neutrino
     
     dq: deque
+    
+    returns: float | complex | int
     """
     x = dq.popleft()
     dq.append(x)
@@ -165,6 +185,8 @@ def reshape(shape, l):
      the shape we want to reshape to
     
     l: list(any) | any
+    
+    returns: list(any) | any
     """
     if not (isinstance(l, list) or isinstance(l, deque)):
         return l
