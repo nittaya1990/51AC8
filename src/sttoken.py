@@ -1,6 +1,6 @@
 """
 This module holds the implementation
- for the AstNodes and Tokens
+ for the Tokens
  Also this module holds some related functions as well
 """
 from enum import Enum, auto
