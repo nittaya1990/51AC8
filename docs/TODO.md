@@ -30,7 +30,7 @@ Holds what I have remaining.
     - [ ] `ŚF⍉I·` Sort Flatten Transpose Identity matrix Matmul
     - [ ] `i` Index / Slice
     - [ ] `Ț` push 10
-    - [ ] `s` Split into chunks
+    - [ ] `sJ` Split into chunks, convert to complex number
     - [ ] `#≢` Reshape (APL/k) Depth
     - [ ] `æ∊` Is prime? Belongs to?
     - [ ] `→←` Push to / pop from variable
