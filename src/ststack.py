@@ -7,3 +7,8 @@ class Stack:
     """
     A stack that supports operations
     """
+    def __init__(self):
+        self.s = []
+
+    def pop(self):
+        return self.s.pop()
