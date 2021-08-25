@@ -164,6 +164,37 @@ def vectorise2(f, x, y):
             return [vectorise2(f, x, b) for b in y]
         else:
             return [vectorise2(f, a, y) for a in x]
+        
+def vectorise3(f, x, y, z):
+    """
+    Vectorise 3, derived from vectorise2
+    
+    f: triadic function
+    
+    x: list(any) | any
+    
+    y: list(any) | any
+    
+    z: list(any) | any
+    
+    returns: list(any) | any
+    """
+    dx = depth(x)
+    dy = depth(y)
+    dz = depth(z)
+    if dx == dy:
+        if dx != 0:
+            return [vectorise3(f, a, b, c) for a,b,c in zip_longest(x, y, z, fillvalue=0)]
+        else:
+            return f(x, y, z)
+    else:
+        if min([dx, dy, dz]) == dx:
+            return [vectorise3(f, x, b, c) for b,c in zip_longest(y, z, fillvalue=0)]
+        elif min([dx, dy, dz]) == dy:
+            return [vectorise3(f, a, y, c) for a,c in zip_longest(x, z, fillvalue=0)]
+        else:
+            return [vectorise3(f, a, b, z) for a,b in zip_longest(x, y, fillvalue=0)]
+
 
 def reduce(f, l):
     """
