@@ -37,8 +37,8 @@ Holds what I have remaining.
     - [ ] `æ∊` Is prime? Belongs to?
     - [ ] `→←` Push to / pop from variable
 - [ ] Interpreter Flags
-    - [ ] `-j` Flag, print the top array seprated by newlines like vyxal.
-    - [ ] `-s` Print the stack at the end of the program
+    - [ ] `-j` Flag, print the top array seprated by newlines 
+    - [ ] `-s` Print the stack at the end of the program like vyxal `-J`.
     - [ ] `--log` Log file
     - [ ] `-S` Supress output
     - [ ] `-a` Output into an array, that is printed later.
