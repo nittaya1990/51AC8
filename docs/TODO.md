@@ -31,6 +31,7 @@ Holds what I have remaining.
     - [ ] `ŚF⍉I·` Sort Flatten Transpose Identity matrix Matmul
     - [ ] `i` Index / Slice
     - [ ] `Ț` push 10
+    - [ ] `↶↷` Push to second stack; pop from it
     - [ ] `sJ` Split into chunks, convert to complex number
     - [ ] `#≢` Reshape (APL/k) Depth
     - [ ] `æ∊` Is prime? Belongs to?
