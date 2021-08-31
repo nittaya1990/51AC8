@@ -11,3 +11,15 @@ def test_depth_nested():
     assert stutils.depth([2, []]) == 2
     assert stutils.depth([[]]) == 2
     assert stutils.depth([[], [3, [5]]]) == 3
+
+def test_split():
+    assert stutils.split([1, 2, 3, 4, 5, 6], 3) == [[1, 2, 3], [4, 5, 6]]
+
+def test_rotate_first():
+    assert stutils.rotate_first([1, 2, 3, 4]) == [4, 1, 2, 3]
+    assert stutils.rotate_first([[1, 5], [2, 6], [3, 7], [4, 8]]) == [[4, 8], [1, 5], [2, 6], [3, 7]]
+
+def test_rotate():
+    assert stutils.rotate([1, 2, 3, 4]) == [1, 2, 3, 4]
+    assert stutils.rotate([[1, 5], [2, 6], [3, 7], [4, 8]]) == [[5, 1], [6, 2], [7, 3], [8, 4]]
+
