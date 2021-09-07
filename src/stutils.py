@@ -99,6 +99,8 @@ def reverse(l):
     """
     if not isinstance(l, list):
         return l >> 1
+    if not isinstance(l[0], list):
+        return reverse_first(l)
     l = [x[::-1] for x in l]
     return l
 

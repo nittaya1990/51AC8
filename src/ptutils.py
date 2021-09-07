@@ -23,3 +23,18 @@ def test_rotate():
     assert stutils.rotate([1, 2, 3, 4]) == [1, 2, 3, 4]
     assert stutils.rotate([[1, 5], [2, 6], [3, 7], [4, 8]]) == [[5, 1], [6, 2], [7, 3], [8, 4]]
 
+def test_reverse_first():
+    assert stutils.reverse_first([1, 2, 3, 4]) == [4, 3, 2, 1]
+    assert stutils.reverse_first([[1, 5], [2, 6], [3, 7], [4, 8]]) == [[4, 8], [3, 7], [2, 6], [1, 5]]
+
+def test_reverse():
+    assert stutils.reverse([1, 2, 3, 4]) == [4, 3, 2, 1]
+    assert stutils.reverse([[1, 5], [2, 6], [3, 7], [4, 8]]) == [[5, 1], [6, 2], [7, 3], [8, 4]]
+
+def test_reduce_first():
+    assert stutils.reduce_first(lambda x,y: x+y, [1, 2, 3, 4]) == 10
+    assert stutils.reduce_first(lambda x,y: x+y, [[1, 5], [2, 6], [3, 7], [4, 8]]) == [1, 5, 2, 6, 3, 7, 4, 8]
+
+def test_reduce():
+    assert stutils.reduce(lambda x,y: x+y, [1, 2, 3, 4]) == 10
+    assert stutils.reduce(lambda x,y: x+y, [[1, 5], [2, 6], [3, 7], [4, 8]]) == [6, 8, 10, 12]
