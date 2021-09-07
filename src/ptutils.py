@@ -1,11 +1,9 @@
 import stutils
 
-def test_depth_scalar():
-    assert stutils.depth(0) == 0
+
+def test_depth():
     assert stutils.depth(4) == 0
     assert stutils.depth(21) == 0
-
-def test_depth_nested():
     assert stutils.depth([]) == 1
     assert stutils.depth([2]) == 1
     assert stutils.depth([2, []]) == 2
@@ -46,3 +44,11 @@ def test_vectorise1():
 def test_vectorise2():
     assert stutils.vectorise2(lambda x,y: x+y, [1, [2, 3], [4]], [[[10, 20], [30], 40, 50], 60]) == [[[11, 21], [32, 3], [44], 50], [61, [62, 63], [64]]]
     assert stutils.vectorise2(lambda x,y: x*y, [1, 2, 3, [4, 5]], [1, 2, 3]) == [[1, 2, 3], [2, 4, 6], [3, 6, 9], [4, 10, 0]]
+
+def test_matmul():
+    assert stutils.matmul([[2, 3, 5], [6, 5, 2], [0, 4, 6]], [[2, 3, 1], [3, 1, 6], [1, 4, 8]]) == [[18, 29, 60], [29, 31, 52], [18, 28, 72]]
+    assert stutils.matmul([[2, 3, 1], [3, 1, 6], [1, 4, 8]], [[2, 3, 5], [6, 5, 2], [0, 4, 6]]) == [[22, 25, 22], [12, 38, 53], [26, 55, 61]]
+
+def test_reshape():
+    assert stutils.reshape([3, 3], [1, 2, 3]) == [[1, 2, 3], [1, 2, 3], [1, 2, 3]]
+    assert stutils.reshape([4, 1, 2, 3], [1, 3, 4, 2]) == [[[[1, 3, 4], [2, 1, 3]]], [[[4, 2, 1], [3, 4, 2]]], [[[1, 3, 4], [2, 1, 3]]], [[[4, 2, 1], [3, 4, 2]]]]
