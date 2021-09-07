@@ -38,3 +38,11 @@ def test_reduce_first():
 def test_reduce():
     assert stutils.reduce(lambda x,y: x+y, [1, 2, 3, 4]) == 10
     assert stutils.reduce(lambda x,y: x+y, [[1, 5], [2, 6], [3, 7], [4, 8]]) == [6, 8, 10, 12]
+
+def test_vectorise1():
+    assert stutils.vectorise1(lambda x: x+1, [1, 2, 3, 4, 5]) == [2, 3, 4, 5, 6]
+    assert stutils.vectorise1(lambda x: x*2, [1, 2, [4, 5, [3]]]) == [2, 4, [8, 10, [6]]]
+
+def test_vectorise2():
+    assert stutils.vectorise2(lambda x,y: x+y, [1, [2, 3], [4]], [[[10, 20], [30], 40, 50], 60]) == [[[11, 21], [32, 3], [44], 50], [61, [62, 63], [64]]]
+    assert stutils.vectorise2(lambda x,y: x*y, [1, 2, 3, [4, 5]], [1, 2, 3]) == [[1, 2, 3], [2, 4, 6], [3, 6, 9], [4, 10, 0]]

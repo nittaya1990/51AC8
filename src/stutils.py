@@ -166,7 +166,7 @@ def vectorise2(f, x, y):
             return [vectorise2(f, x, b) for b in y]
         else:
             return [vectorise2(f, a, y) for a in x]
-        
+
 def reduce(f, l):
     """
     Reduce function f over l
